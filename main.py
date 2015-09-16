@@ -9,7 +9,9 @@ rootSectionLength = 5
 middleSectionLength = 3.79
 endSectionLength = 2
 
-coordinateGen = CoordinateGen(startPoint, endPoint, 5, 3 ,2)
+coordinateGen = CoordinateGen(startPoint, endPoint, rootSectionLength, middleSectionLength, endSectionLength)
+solution = coordinateGen.withAngle(minimumAngle)
+print "the answer is : \n" + str(solution) + "\nthe process with logs is : \n\n"
 
 middleSectionPointOne = coordinateGen.getPointOnCircle(startPoint, rootSectionLength, minimumAngle)
 print "middle section point one is : " + str(middleSectionPointOne)
