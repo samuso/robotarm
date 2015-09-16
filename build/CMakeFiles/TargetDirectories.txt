@@ -1,0 +1,1 @@
+/Users/ceezeh/Desktop/robotarm/build/CMakeFiles/getcoords.dir
