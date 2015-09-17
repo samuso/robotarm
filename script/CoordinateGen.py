@@ -38,6 +38,8 @@ class CoordinateGen:
 
     def withAngle(self, startingPoint, objectPoint, rootSectionLength, middleSectionLength, endSectionLength, angle):
         # first we generate the first point
+
+        failedResult = [None,None]
         pointOne = self.getPointOnCircle(startingPoint, rootSectionLength, angle)
 
         # then we need two angles
@@ -46,14 +48,16 @@ class CoordinateGen:
         l2 = endSectionLength
         l3 = middleSectionLength
         if not self._isTriangle(l1, l2, l3):
-            return None
+            # print "1! l1:{}, l2:{}, l3:{}".format(l1,l2,l3)
+            return failedResult
         angle1 = self.triangleAngleCalculator(l1, l2, l3)
         # angle2
         l1 = l1
         l2 = self.distanceBetweenPoints(objectPoint, startingPoint)
         l3 = rootSectionLength
-        if not self._isTriangle(l1, l2, l3):
-            return None
+        # if not self._isTriangle(l1, l2, l3):
+        #     # print "2! l1:{}, l2:{}, l3:{}".format(l1,l2,l3)
+        #     return failedResult
         angle2 = self.triangleAngleCalculator(l1, l2, l3)
         # now we get the total of the two angles
         totalAngle = math.pi - (angle1 + angle2)
@@ -64,17 +68,20 @@ class CoordinateGen:
         l1 = middleSectionLength
         l2 = rootSectionLength
         l3 = self.distanceBetweenPoints(startingPoint, pointTwo)
-        if not self._isTriangle(l1, l2, l3):
-            return None
+        # if not self._isTriangle(l1, l2, l3):
+        #     # print "3! l1:{}, l2:{}, l3:{}".format(l1,l2,l3)
+        #     return failedResult
         finalAngle1 = self.triangleAngleCalculator(l1, l2, l3)
 
         l1 = endSectionLength
         l2 = middleSectionLength
         l3 = self.distanceBetweenPoints(pointOne, objectPoint)
-        if not self._isTriangle(l1, l2, l3):
-            return None
+        # if not self._isTriangle(l1, l2, l3):
+        #     # print "4! l1:{}, l2:{}, l3:{}".format(l1,l2,l3)
+        #     return failedResult
         finalAngle2 = self.triangleAngleCalculator(l1, l2, l3)
-        if (finalAngle2 < 2.2):
-            return None
+        # if (finalAngle2 < 2.2):
+        #     # print "5! finalAngle2:{}".format(finalAngle2)
+        #     return failedResult
 
         return (finalAngle1, finalAngle2)
