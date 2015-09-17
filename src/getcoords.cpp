@@ -30,7 +30,7 @@ int getNumDetected(IplImage *img, TrackerMultiMarker *tracker,	int width, int he
 	IplImage *tempImg = cvCreateImage(cvSize(width, height), img->depth, 1);
 	cvCvtColor(img, tempImg, CV_RGB2GRAY);
 	cvAdaptiveThreshold(tempImg, greyImg, 255.0, CV_ADAPTIVE_THRESH_GAUSSIAN_C,
-		CV_THRESH_BINARY, 81);
+		CV_THRESH_BINARY, 31);
 	numDetected = tracker->calc((unsigned char*) greyImg->imageData);
 
 	IplImage* new_img = cvCreateImage(cvSize(640, 480), greyImg->depth, greyImg->nChannels);
@@ -73,10 +73,11 @@ int main(int argc, char** argv) {
 
 
 	int width = img.cols, height = img.rows;
-	int marker0 = 492, marker1 = 493, marker2 = 494;
+	int marker0 = 495, marker1 = 493, marker2 = 492, marker3=494;
 	Mat pose0 = (Mat_<float>(8,1) << 0, 0, 0, 0, 0, 0, 1, 1);
 	Mat pose1 = (Mat_<float>(8,1) << 0, 0, 0, 0, 0, 0, 1, 1); 
 	Mat pose2 = (Mat_<float>(8,1) << 0, 0, 0, 0, 0, 0, 1, 1); 
+	Mat pose3 = (Mat_<float>(8,1) << 0, 0, 0, 0, 0, 0, 1, 1); 
 
 	
 	IplImage* img_proc = cvCreateImage(cvSize(width, height),
@@ -124,7 +125,7 @@ int main(int argc, char** argv) {
 		int num = getNumDetected(img_proc, tracker, width,	height);
 		cout << num << " marker(s) detected"<< endl;
 
-		if (num == 3) {
+		if (num == 4) {
 			for (int i = 0; i < num; i ++) {
 				int markerID = tracker->getDetectedMarker(i).id;
 
@@ -134,12 +135,16 @@ int main(int argc, char** argv) {
 					getMarkerPosition(tracker, i, pose1); 
 				}else if ( markerID == marker2 ) {
 					getMarkerPosition(tracker, i, pose2); 
+				}else if ( markerID == marker3 ) {
+					getMarkerPosition(tracker, i, pose3); 
 				}
+
 			}
-			float out[9] = {pose0.at<float>(0, 0),pose0.at<float>(1, 0),pose0.at<float>(2, 0),
+			float out[13] = {pose0.at<float>(0, 0),pose0.at<float>(1, 0),pose0.at<float>(2, 0),
 				pose1.at<float>(0, 0),pose1.at<float>(1, 0),pose1.at<float>(2, 0),
-				pose2.at<float>(0, 0),pose2.at<float>(1, 0),pose2.at<float>(2, 0)};
-			write(fd, out, 9*sizeof(float));
+				pose2.at<float>(0, 0),pose2.at<float>(1, 0),pose2.at<float>(2, 0),
+				pose3.at<float>(0, 0),pose3.at<float>(1, 0),pose3.at<float>(2, 0), pose3.at<float>(5, 0)};
+			write(fd, out, 13*sizeof(float));
 			usleep(100000);
 		}
 	}

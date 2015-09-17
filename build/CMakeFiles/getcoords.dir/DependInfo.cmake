@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/ceezeh/Desktop/robotarm/src/getcoords.cpp" "/Users/ceezeh/Desktop/robotarm/build/CMakeFiles/getcoords.dir/src/getcoords.cpp.o"
+  "/Users/ceezeh/Desktop/sam/robotarm/src/getcoords.cpp" "/Users/ceezeh/Desktop/sam/robotarm/build/CMakeFiles/getcoords.dir/src/getcoords.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

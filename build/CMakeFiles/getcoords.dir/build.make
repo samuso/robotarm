@@ -35,10 +35,10 @@ RM = /opt/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ceezeh/Desktop/robotarm
+CMAKE_SOURCE_DIR = /Users/ceezeh/Desktop/sam/robotarm
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ceezeh/Desktop/robotarm/build
+CMAKE_BINARY_DIR = /Users/ceezeh/Desktop/sam/robotarm/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/getcoords.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/getcoords.dir/flags.make
 
 CMakeFiles/getcoords.dir/src/getcoords.cpp.o: CMakeFiles/getcoords.dir/flags.make
 CMakeFiles/getcoords.dir/src/getcoords.cpp.o: ../src/getcoords.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ceezeh/Desktop/robotarm/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ceezeh/Desktop/sam/robotarm/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/getcoords.dir/src/getcoords.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/getcoords.dir/src/getcoords.cpp.o -c /Users/ceezeh/Desktop/robotarm/src/getcoords.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/getcoords.dir/src/getcoords.cpp.o -c /Users/ceezeh/Desktop/sam/robotarm/src/getcoords.cpp
 
 CMakeFiles/getcoords.dir/src/getcoords.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/getcoords.dir/src/getcoords.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ceezeh/Desktop/robotarm/src/getcoords.cpp > CMakeFiles/getcoords.dir/src/getcoords.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ceezeh/Desktop/sam/robotarm/src/getcoords.cpp > CMakeFiles/getcoords.dir/src/getcoords.cpp.i
 
 CMakeFiles/getcoords.dir/src/getcoords.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/getcoords.dir/src/getcoords.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ceezeh/Desktop/robotarm/src/getcoords.cpp -o CMakeFiles/getcoords.dir/src/getcoords.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ceezeh/Desktop/sam/robotarm/src/getcoords.cpp -o CMakeFiles/getcoords.dir/src/getcoords.cpp.s
 
 CMakeFiles/getcoords.dir/src/getcoords.cpp.o.requires:
 .PHONY : CMakeFiles/getcoords.dir/src/getcoords.cpp.o.requires
@@ -110,6 +110,6 @@ CMakeFiles/getcoords.dir/clean:
 .PHONY : CMakeFiles/getcoords.dir/clean
 
 CMakeFiles/getcoords.dir/depend:
-	cd /Users/ceezeh/Desktop/robotarm/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ceezeh/Desktop/robotarm /Users/ceezeh/Desktop/robotarm /Users/ceezeh/Desktop/robotarm/build /Users/ceezeh/Desktop/robotarm/build /Users/ceezeh/Desktop/robotarm/build/CMakeFiles/getcoords.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/ceezeh/Desktop/sam/robotarm/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ceezeh/Desktop/sam/robotarm /Users/ceezeh/Desktop/sam/robotarm /Users/ceezeh/Desktop/sam/robotarm/build /Users/ceezeh/Desktop/sam/robotarm/build /Users/ceezeh/Desktop/sam/robotarm/build/CMakeFiles/getcoords.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/getcoords.dir/depend
 

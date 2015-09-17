@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/ceezeh/Desktop/robotarm/src/getcoords.cpp
+/Users/ceezeh/Desktop/sam/robotarm/src/getcoords.cpp
 iostream
 -
 string
