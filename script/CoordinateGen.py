@@ -59,6 +59,12 @@ class CoordinateGen:
 
         l1 = middleSectionLength
         l2 = rootSectionLength
-        l3 = self.distanceBetweenPoints(objectPoint, pointTwo)
-        finalAngle = self.triangleAngleCalculator(l1, l2, l3)
-        return finalAngle
+        l3 = self.distanceBetweenPoints(startingPoint, pointTwo)
+        finalAngle1 = self.triangleAngleCalculator(l1, l2, l3)
+
+        l1 = endSectionLength
+        l2 = middleSectionLength
+        l3 = self.distanceBetweenPoints(pointOne, objectPoint)
+        finalAngle2 = self.triangleAngleCalculator(l1, l2, l3)
+
+        return (finalAngle1, finalAngle2)
