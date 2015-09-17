@@ -60,4 +60,4 @@ class CoordinateGen:
 
         # and finally the second point
         pointTwo =  self.getPointOnCircle(self._objectPoint, self._endSectionLength, totalAngle)
-        return [pointOne, pointTwo]
+        return pointTwo
