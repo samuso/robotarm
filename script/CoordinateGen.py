@@ -45,11 +45,15 @@ class CoordinateGen:
         l1 = self.distanceBetweenPoints(pointOne, objectPoint)
         l2 = endSectionLength
         l3 = middleSectionLength
+        if not self._isTriangle(l1, l2, l3):
+            return None
         angle1 = self.triangleAngleCalculator(l1, l2, l3)
         # angle2
         l1 = l1
         l2 = self.distanceBetweenPoints(objectPoint, startingPoint)
         l3 = rootSectionLength
+        if not self._isTriangle(l1, l2, l3):
+            return None
         angle2 = self.triangleAngleCalculator(l1, l2, l3)
         # now we get the total of the two angles
         totalAngle = math.pi - (angle1 + angle2)
@@ -60,11 +64,17 @@ class CoordinateGen:
         l1 = middleSectionLength
         l2 = rootSectionLength
         l3 = self.distanceBetweenPoints(startingPoint, pointTwo)
+        if not self._isTriangle(l1, l2, l3):
+            return None
         finalAngle1 = self.triangleAngleCalculator(l1, l2, l3)
 
         l1 = endSectionLength
         l2 = middleSectionLength
         l3 = self.distanceBetweenPoints(pointOne, objectPoint)
+        if not self._isTriangle(l1, l2, l3):
+            return None
         finalAngle2 = self.triangleAngleCalculator(l1, l2, l3)
+        if (finalAngle2 < 2.2):
+            return None
 
         return (finalAngle1, finalAngle2)
