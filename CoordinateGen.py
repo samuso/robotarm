@@ -56,4 +56,9 @@ class CoordinateGen:
 
         # and finally the second point
         pointTwo =  self.getPointOnCircle(objectPoint, endSectionLength, totalAngle)
-        return pointTwo
+
+        l1 = middleSectionLength
+        l2 = rootSectionLength
+        l3 = self.distanceBetweenPoints(objectPoint, pointTwo)
+        finalAngle = self.triangleAngleCalculator(l1, l2, l3)
+        return finalAngle
